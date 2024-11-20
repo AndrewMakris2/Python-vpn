@@ -11,8 +11,9 @@ import bcrypt
 ENCRYPTION_KEY = b'ThisIsASecretKey'
 
 # Hashed admin password (hashed only once and saved securely)
-ADMIN_USERNAME = "admin"
-ADMIN_PASSWORD_HASH = bcrypt.hashpw(b"password123", bcrypt.gensalt())  # This would be saved securely
+ADMIN_USERNAME = "Symphony_User"
+ADMIN_PASSWORD_HASH = bcrypt.hashpw(b"Password", bcrypt.gensalt())  # This would be saved securely
+print(ADMIN_PASSWORD_HASH)
 
 # Authenticate admin access
 def authenticate():
@@ -60,7 +61,7 @@ def encrypt_message(message):
 # Connects to the server and sends the encrypted message.
 def send_message(message):
     client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    client_socket.connect(('127.0.0.1', 5000))  # Connect to the server IP 127.0.0.1 is known as the localhost or loopback address
+    client_socket.connect(('127.0.0.1', 6000))  # Connect to the server IP 127.0.0.1 is known as the localhost or loopback address
     encrypted_message = encrypt_message(message)  # Encrypt the message
     client_socket.sendall(encrypted_message)  # Send the encrypted message
     client_socket.close()  # Close the socket connection

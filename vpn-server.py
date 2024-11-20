@@ -1,7 +1,7 @@
 import socket
 from Crypto.Cipher import AES
 from Crypto.Util.Padding import unpad
-import pyotp
+
 
 # ENCRYPTION_KEY: A shared 16-byte key used for AES-128 encryption and decryption.
 ENCRYPTION_KEY = b'ThisIsASecretKey'
@@ -15,7 +15,7 @@ def decrypt_message(ciphertext):
 # Sets up the server to listen for incoming connections.
 def start_server():
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    server_socket.bind(('0.0.0.0', 5000))  # Bind to port 5000
+    server_socket.bind(('0.0.0.0', 6000))  # Bind to port 5000
     server_socket.listen(5)  # Listen for incoming connections
     print("VPN server is now listening...")
 
