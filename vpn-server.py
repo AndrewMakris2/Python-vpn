@@ -17,7 +17,7 @@ def start_server():
     # Create a TCP socket.
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     # Bind the socket to all interfaces and port 6000.
-    server_socket.bind(('0.0.0.0', 6000))
+    server_socket.bind(('127.0.0.1', 6000))
     # Allow up to 5 simultaneous connection requests.
     server_socket.listen(5)
     print("VPN server is now listening...")

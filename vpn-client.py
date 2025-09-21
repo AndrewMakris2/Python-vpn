@@ -14,7 +14,7 @@ ENCRYPTION_KEY = b'ThisIsASecretKey'
 # Hashed admin password (hashed only once and saved securely)
 ADMIN_USERNAME = "Symphony_User"  
 ADMIN_PASSWORD_HASH = bcrypt.hashpw(b"Password", bcrypt.gensalt())  
-
+print(ADMIN_PASSWORD_HASH)
 # Function to authenticate the admin access
 def authenticate(username, password):
     if username == ADMIN_USERNAME and bcrypt.checkpw(password.encode(), ADMIN_PASSWORD_HASH):  
